@@ -1,0 +1,14 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+
+# Home page
+# GET     /                           com.prismtech.web.server.controllers.StandaloneServerApp.index
+
+# Map static resources from the /public folder to the /assets URL path
+GET   /assets/*file                      controllers.Assets.at(path="/public", file)
+
+GET     /vortex/:topic                    com.prismtech.vortex.demos.rest.Controller.readFromTopic(topic: String, partition: String ?= null)
+PUT     /vortex/:topic                    com.prismtech.vortex.demos.rest.Controller.writeToTopic(topic: String, partition: String ?= null)
+PUT     /vortex/topic/:topic              com.prismtech.vortex.demos.rest.Controller.topic(topic: String, type: String ?= null, durability: String ?= null, reliability: String ?= null, history: String ?= null)

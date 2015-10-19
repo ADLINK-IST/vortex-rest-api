@@ -1,0 +1,12 @@
+module vortex {
+	struct JSONTopicType {
+	  string value;
+	};
+#pragma keylist JSONTopicType
+
+	struct KeyValueTopicType {
+	  string key;
+	  string value;
+	};
+#pragma keylist KeyValueTopicType key
+};
